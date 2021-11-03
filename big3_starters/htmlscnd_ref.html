@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>seconds ftw</title>
+    </head>
+    <body>
+        <img src='./images/rev0.jpg' id='queen'>
+        <div class='txt'>YOOO WE JUST NAVIGATED ALSO GO REVEILLE</div>
+        <button onClick = 'changeImage()'>Switch it up!</button>
+        <div><a href="htmlhome_ref.html" class="btn btn-primary">Go to first page</a></div>
+    </body>
+    <style>
+        body {
+            margin: 0;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+        img {
+            height: 250;
+        }
+        .txt{
+            font-size: 28;
+            color: rgb(122, 0, 24);
+        }
+    </style>
+    
+    <script>
+        const changeImage = () => {
+            curr_url = document.querySelector('#queen').src
+            new_index = parseInt(curr_url.slice(-5,-4))+1
+            if(new_index<6){
+                curr_url = curr_url.slice(0,-5) + new_index +'.jpg'
+                }
+            else{
+                curr_url = curr_url.slice(0,-5) + 0 +'.jpg'
+                }
+            // console.log(curr_url)
+            document.querySelector('#queen').src = curr_url
+        }
+    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+</html>
